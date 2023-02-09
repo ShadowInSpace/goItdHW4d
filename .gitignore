@@ -45,3 +45,4 @@ bin/
 .idea/vcs.xml
 .idea/workspace.xml
 /.idea/
+/gradle/
