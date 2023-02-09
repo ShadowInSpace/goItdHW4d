@@ -46,3 +46,13 @@ bin/
 .idea/workspace.xml
 /.idea/
 /gradle/
+.idea/gradle.xml
+.idea/gradle.xml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/workspace.xml
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+gradlew
+gradlew.bat
+settings.gradle
