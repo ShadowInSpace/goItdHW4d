@@ -1,4 +1,4 @@
-INSERT INTO worker (NAME, BIRTHDAY, LEVEL, SALARY)
+INSERT INTO hw4d.worker (NAME, BIRTHDAY, LEVEL, SALARY)
 VALUES
 ('Rostyslav','1996-02-03','Trainee',100),
 ('Svyryd','1912-12-12','Middle',1300),
@@ -11,11 +11,11 @@ VALUES
 ('Petro','2002-01-24','Junior',950),
 ('Eve','1902-12-08','Middle',2700);
 
-INSERT INTO client (NAME)
+INSERT INTO hw4d.client (NAME)
 VALUES
 ('Den'), ('Stiven'), ('Mery'), ('Anatoliy'), ('Frodo'); 
 
-INSERT INTO project (CLIENT_ID, START_DATA, FINISH_DATA)
+INSERT INTO hw4d.project (CLIENT_ID, START_DATA, FINISH_DATA)
 VALUES
 (2,'2023-01-05', '2023-02-06'),
 (3,'2023-04-14', '2024-11-07'),
@@ -28,7 +28,7 @@ VALUES
 (5,'2023-05-27', '2024-03-15'),
 (2,'2022-12-21', '2023-10-25');
 
-INSERT INTO project_worker (PROJECT_ID, WORKER_ID)
+INSERT INTO hw4d.project_worker (PROJECT_ID, WORKER_ID)
 VALUES
 (1,1),
 (2,2),

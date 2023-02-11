@@ -2,10 +2,34 @@ package sqlUtils.models;
 
 public class MaxProjectCountClient {
     private String name;
-    private int projectCount;
+    private int project_count;
 
-    public MaxProjectCountClient(String name, int projectCount) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.projectCount = projectCount;
+    }
+
+    public int getProject_count() {
+        return project_count;
+    }
+
+    public void setProject_count(int project_count) {
+        this.project_count = project_count;
+    }
+
+    public MaxProjectCountClient(String name, int project_count) {
+        this.name = name;
+        this.project_count = project_count;
+    }
+
+    @Override
+    public String toString() {
+        return "MaxProjectsClient{" +
+                "name='" + name + '\'' +
+                ", project_count=" + project_count +
+                '}';
     }
 }

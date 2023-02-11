@@ -11,14 +11,18 @@ public class Database {
 
     private final Connection connection;
     //H2:
-    private final String url = "jdbc:h2:~/test";
-    private final String user = "ShadowInSpace";
-    private final String password = "edcyhn";
+//    private final String url = "jdbc:h2:~/test";
+//    private final String user = "ShadowInSpace";
+//    private final String password = "edcyhn";
 
     //постгрес:
-//    private final String url = "jdbdc:postgresql://localhost:5432/test";
-//    private final String user = "postgres";
-//    private final String password = "159753";
+    private final String url = "jdbc:postgresql://localhost:5432/test";
+    private final String user = "postgres";
+    private final String password = "159753";
+// MySQL
+//    private final String url = "";
+//    private final String user = "";
+//    private final String password = "";
 
 
     public Database() {
