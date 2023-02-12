@@ -16,9 +16,10 @@ public class DatabaseInitService {
         String str;
         StringBuilder sb = new StringBuilder();
         while ((str = in.readLine()) != null) {
-            sb.append(str + "\n ");
+            sb.append(str).append("\n ");
         }
         in.close();
+        connection.close();
         stmt.execute(sb.toString());
     }
 }

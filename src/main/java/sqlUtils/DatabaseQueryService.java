@@ -5,10 +5,7 @@ import sqlUtils.models.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,13 +30,15 @@ public class DatabaseQueryService {
         String name;
         int projectCount;
         try {
-            Statement statement = new Database().getConnection().createStatement();
+            Connection connection = new Database().getConnection();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 name = rs.getString("name");
                 projectCount = rs.getInt("project_count");
                 maxProjectCountClient.add(new MaxProjectCountClient(name, projectCount));
             }
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -51,13 +50,15 @@ public class DatabaseQueryService {
          String name;
          int salary;
          try {
-             Statement statement = new Database().getConnection().createStatement();
+             Connection connection = new Database().getConnection();
+             Statement statement = connection.createStatement();
              ResultSet rs = statement.executeQuery(query);
              while (rs.next()) {
                  name = rs.getString("name");
                  salary = rs.getInt("salary");
                  maxSalaryWorker.add(new MaxSalaryWorker(name, salary));
              }
+             connection.close();
          } catch (SQLException e) {
              throw new RuntimeException(e);
          }
@@ -70,13 +71,15 @@ public class DatabaseQueryService {
         String name;
         int monthCount;
         try {
-            Statement statement = new Database().getConnection().createStatement();
+            Connection connection = new Database().getConnection();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 name = rs.getString("name");
                 monthCount = rs.getInt("month_count");
                 longestProjectCount.add(new LongestProjectCount(name, monthCount));
             }
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -89,7 +92,8 @@ public class DatabaseQueryService {
         String name;
         Date birthday;
         try {
-            Statement statement = new Database().getConnection().createStatement();
+            Connection connection = new Database().getConnection();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 type = rs.getString("type");
@@ -97,6 +101,7 @@ public class DatabaseQueryService {
                 birthday = rs.getDate("birthday");
                 youngestEldestWorkers.add(new YoungestEldestWorkers(type, name, birthday));
             }
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -109,13 +114,15 @@ public class DatabaseQueryService {
         String name;
         int price;
         try {
-            Statement statement = new Database().getConnection().createStatement();
+            Connection connection = new Database().getConnection();
+            Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 name = rs.getString("name");
                 price = rs.getInt("price");
                 projectPrices.add(new ProjectPrices(name, price));
             }
+            connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

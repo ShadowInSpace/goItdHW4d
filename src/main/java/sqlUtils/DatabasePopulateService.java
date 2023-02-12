@@ -15,11 +15,10 @@ public class DatabasePopulateService {
         String str;
         StringBuilder sb = new StringBuilder();
         while ((str = in.readLine()) != null) {
-            sb.append(str + "\n ");
+            sb.append(str).append("\n ");
         }
         in.close();
+        connection.close();
         stmt.execute(sb.toString());
-        //не дуже сподобалось що код повторюється,
-        //на щастя в наступному завданні цього можна уникнути
     }
 }
