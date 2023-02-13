@@ -38,6 +38,8 @@ public class DatabaseQueryService {
                 projectCount = rs.getInt("project_count");
                 maxProjectCountClient.add(new MaxProjectCountClient(name, projectCount));
             }
+            statement.close();
+            rs.close();
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -58,6 +60,8 @@ public class DatabaseQueryService {
                  salary = rs.getInt("salary");
                  maxSalaryWorker.add(new MaxSalaryWorker(name, salary));
              }
+             statement.close();
+             rs.close();
              connection.close();
          } catch (SQLException e) {
              throw new RuntimeException(e);
@@ -79,6 +83,8 @@ public class DatabaseQueryService {
                 monthCount = rs.getInt("month_count");
                 longestProjectCount.add(new LongestProjectCount(name, monthCount));
             }
+            statement.close();
+            rs.close();
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -101,6 +107,8 @@ public class DatabaseQueryService {
                 birthday = rs.getDate("birthday");
                 youngestEldestWorkers.add(new YoungestEldestWorkers(type, name, birthday));
             }
+            statement.close();
+            rs.close();
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -122,6 +130,8 @@ public class DatabaseQueryService {
                 price = rs.getInt("price");
                 projectPrices.add(new ProjectPrices(name, price));
             }
+            statement.close();
+            rs.close();
             connection.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);

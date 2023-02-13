@@ -19,6 +19,7 @@ public class DatabasePopulateService {
         }
         in.close();
         stmt.execute(sb.toString());
+        stmt.close();
         connection.close();
     }
 }

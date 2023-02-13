@@ -20,6 +20,7 @@ public class DatabaseInitService {
         }
         in.close();
         stmt.execute(sb.toString());
+        stmt.close();
         connection.close();
     }
 }
