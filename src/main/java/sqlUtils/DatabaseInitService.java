@@ -19,7 +19,7 @@ public class DatabaseInitService {
             sb.append(str).append("\n ");
         }
         in.close();
-        connection.close();
         stmt.execute(sb.toString());
+        connection.close();
     }
 }
